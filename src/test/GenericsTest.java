@@ -47,4 +47,25 @@ public class GenericsTest {
     	double max=Generics.MaxDouble(1.3,2.8,5.1);
         assertEquals( 5.1 , max , 0 );
     }
+    
+    @Test
+    public void shouldReturnTrue_MaxString_first ()
+    {
+    	String max = Generics.MaxString("AstonMartin","GMC","Cadi");
+        assertEquals( "AstonMartin" , max );
+    }
+    
+    @Test
+    public void shouldReturnTrue_MaxString_second()
+    {
+    	String max = Generics.MaxString("GMC","AstonMartin","Cadi");
+        assertEquals( "AstonMartin" , max );
+    }
+    
+    @Test
+    public void shouldReturnTrue_MaxString_third()
+    {
+    	String max = Generics.MaxString("GMC","Cadi","AstonMartin");
+        assertEquals( "AstonMartin" , max );
+    }
 }
