@@ -32,4 +32,15 @@ public class Generics {
 			
 		return max;
 	}
+	
+	public static <E extends Comparable<E>> E getMax(E x , E y , E z) {
+		E max=x;
+		
+		if(y.compareTo(max) > 0 )
+			max=y;
+		if(z.compareTo(max) > 0 )
+			max=z;
+		
+		return max;
+	}
 }
