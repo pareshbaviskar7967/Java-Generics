@@ -1,6 +1,6 @@
 package main;
 
-public class Generics {
+public class Generics <E extends Comparable<E>>{
 	public static int MaxNum(Integer i, Integer j, Integer k) {
 		int max=i;
 		if(j.compareTo(max) > 0 )
@@ -33,6 +33,18 @@ public class Generics {
 		return max;
 	}
 	
+	E x , y , z;
+	
+	public Generics(E x, E y, E z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	
+	public E maximum(){
+		return Generics.getMax(x, y, z); 
+	}
+
 	public static <E extends Comparable<E>> E getMax(E x , E y , E z) {
 		E max=x;
 		
